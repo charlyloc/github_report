@@ -1,3 +1,4 @@
+import os
 import requests
 from datetime import datetime, timedelta
 
@@ -42,9 +43,8 @@ def generate_report(pr_info):
     return '\n'.join(report)
 
 def main():
-    # Repo information
-    owner = "freeCodeCamp"
-    repo = "freeCodeCamp"
+    owner = os.getenv('OWNER')
+    repo = os.getenv('REPO')
     
     pr_info = get_pr(owner, repo)
 
