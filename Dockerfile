@@ -4,6 +4,8 @@ WORKDIR /app
 
 ENV OWNER freeCodeCamp
 ENV REPO freeCodeCamp
+ENV FROM user@company.com 
+ENV TO manager@company.com
 
 COPY app/ /app
 

@@ -45,14 +45,16 @@ def generate_report(pr_info):
 def main():
     owner = os.getenv('OWNER')
     repo = os.getenv('REPO')
+    from_email = os.getenv('FROM')
+    to_email = os.getenv('TO')
     
     pr_info = get_pr(owner, repo)
 
     report = generate_report(pr_info)
     
     email = {
-        "From": "user@gmail.com",
-        "To": "manager@gmail.com",
+        "From": from_email,
+        "To": to_email,
         "Subject": f"Weekly PR Report for {repo} Github Repository",
         "Body": report
     }
